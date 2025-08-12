@@ -1,0 +1,540 @@
+
+/* ---------------------------
+   FONTS + RESET BÁSICO
+   --------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body base */
+body {
+  font-family: "Ubuntu", sans-serif;
+  color: #000;
+  background-color: #fff;
+  line-height: 1.4;
+  overflow-x: hidden; /* evita scroll horizontal causados por elementos flojos */
+}
+
+/* ---------------------------
+   HEADER / NAV (Desktop)
+   --------------------------- */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(20, 77, 176); /* azul de fondo del header */
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+/* Logotipos */
+.logo, .logo2 {
+  width: 60px;
+  flex: 0 0 60px;
+}
+.logo img, .logo2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Nav ocupa el espacio central con fondo blanco (rectángulo) */
+nav {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #ffffff;      /* fondo blanco del rectángulo del menú */
+}
+
+/* UL centrado dentro del nav */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* CENTRA el UL en desktop */
+  gap: 40px;                /* separación entre items (mantiene separación) */
+  padding-inline-start: 40px;
+}
+
+/* Estilos de links del nav */
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  transition: color .18s ease, transform .18s ease;
+}
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #0b63c6;
+  transform: translateY(-1px);
+}
+
+.navbar .navbar-nav .nav-link{
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 24px; /* aumentado */
+}
+/* Si usás el toggle de Bootstrap (navbar-toggler) el botón puede tener imagen */
+
+/* ---------------------------
+   TITULOS / H1
+   --------------------------- */
+h1 {
+  color: #ffffff !important;
+  background-color: rgb(0,94,177);
+  font-size: 50px;
+  font-weight: 300;
+  text-align: center;
+  padding: 0px 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* Subtítulos */
+h3 {
+  color: rgb(0,0,0);
+  font-size: 25px;
+  font-weight: 300;
+}
+
+/* ---------------------------
+   INDEX - Main Desktop
+   --------------------------- */
+
+/* Desktop */
+.intro-section {
+  position: absolute;
+  top: 50%;                  /* verticalmente al centro */
+  left: 50%;                 /* horizontalmente al centro */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* opcional, mejora la legibilidad */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.intro-section h2 {
+  font-size: 2rem;
+}
+
+.intro-section p {
+  font-size: 1.2rem;
+}
+
+/* Features debajo de la intro */
+.features-section {
+  position: absolute;
+  top: 68%; /* Mantener debajo de la intro */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap; /* permite que salten de línea si no hay espacio */
+  justify-content: center;
+  gap: 20px;
+  max-width: 90%;
+}
+
+.feature-card {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 10px;
+  width: 220px;
+  color: white;
+  text-align: center;
+}
+
+/* ---------------------------
+   TIENDA - Desktop layout (flex)
+   --------------------------- */
+
+/* Contenedor del grupo de imágenes: flex y wrap */
+.productImageGroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+/* "Slots" para posicionar imágenes como en tu CSS original.
+   Ajustan ancho relativo de cada slot en desktop. */
+.productShopImage1,
+.productShopImage2,
+.productShopImage3,
+.productShopImage4,
+.productShopImage5,
+.productShopImage6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* por defecto cada slot toma % relativo para mantener el wireframe */
+}
+
+/* Anchuras tal como en la versión anterior adaptadas para flex */
+.productShopImage1,
+.productShopImage2,
+.productShopImage6 {
+  flex: 0 0 20%; /* ~20% del ancho del contenedor */
+  max-width: 20%;
+}
+
+.productShopImage3 {
+  flex: 0 0 35%;
+  max-width: 18%;
+}
+
+.productShopImage4,
+.productShopImage5 {
+  flex: 0 0 15%;
+  max-width: 15%;
+}
+
+/* Si alguna imagen es más grande, el img dentro se adapta:
+   productImageGroup img ya asegura max-width / height:auto. */
+
+/* Textos y botones de la sección tienda */
+.productSelection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+.shopRouterIcon, .shopAntennaIcon {
+  width: 100px;
+  height: auto;
+  margin: 10px 0;
+}
+.shopGreenButton1, .shopGreenButton2 {
+  width: 120px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.greenButton {
+  width: 120px;  
+  display: block;
+  margin: 0 auto; /* centra el botón en su contenedor */
+}
+
+/* Control de texto para tiendas */
+.productShopTextFont1,
+.productShopTextFont2,
+.productShopTextFont3 {
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* ---------------------------
+   SOBRE NOSOTROS / PLANES / OTROS (Desktop)
+   --------------------------- */
+
+.aboutUsImageSize {
+  margin: 5px auto;
+  padding: 10px;
+  width: 20%;
+  display: block;
+  text-align: center;
+}
+.aboutUsTextFont,
+.aboutUsTeamTextFontLink {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  padding: 10px;
+  text-align: left;
+}
+.aboutUsTeamTextFontLink { color: rgb(146,0,159); }
+
+/* Planes (botones e imágenes) */
+.h3PlansTextFont { font-weight: 300; text-align: center; }
+.descriptionText { max-width: 600px; margin: 10px auto; text-align:center; }
+/* ---------------------------
+   FINALIZAR COMPRA (Desktop)
+   --------------------------- */
+
+.productImagePosition img { max-width: 250px; height: auto; display:block; margin:0 auto; }
+
+.productTextFont, .productTextFont2, .productDescriptionFont {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  padding: 10px;
+}
+
+/* Botones de la parte finalizar */
+.buttonTextPosition {
+  margin: 5px auto;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+}
+
+/* estilo botones acción */
+.buttonTextFont1, .buttonTextFont2 {
+  font-family: "Oswald", sans-serif;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.buttonTextFont1 { color: rgb(35,70,0); background-color: rgba(0,177,0,0.404); }
+.buttonTextFont2 { color: rgb(0,55,118); background-color: rgba(59,160,207,0.432); }
+
+/* ---------------------------
+   FOOTER (Desktop)
+   --------------------------- */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(20,67,176);
+}
+footer .footerSocialMedia {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+  color: #fff;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 700;
+}
+footer p { font-weight: 700; }
+
+/* ---------------------------
+   INTERACTIVOS: botones, inputs, hover
+   --------------------------- */
+a, button, input[type="button"], input[type="submit"] {
+  transition: all .18s ease;
+}
+a:hover, button:hover { transform: translateY(-1px); }
+
+/* Inputs y textareas */
+input, textarea, select {
+  border-radius: 4px;
+  font-family: "Ubuntu", sans-serif;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(20,77,176,0.18);
+  border-color: rgba(20,77,176,0.6);
+}
+
+/* Selector de cantidad (finalizarCompra) - desktop layout */
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cantidad-control button {
+  width: 36px;
+  height: 36px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border: none;
+  background: #144db0;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.cantidad-control input[type="number"] {
+  width: 80px;
+  text-align: center;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ---------------------------
+   FIN BLOQUE DESKTOP (DEFAULT)
+   --------------------------- */
+
+/* =========================================================
+   BLOQUE MÓVIL — TODO LO QUE SIGA SE APLICA EN <= 768px
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* HEADER: apila elementos */
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+  }
+
+  /* NAV full-width y UL en vertical (grid) */
+  nav {
+    width: 100%;
+    background: #ffffff; /* el rectángulo blanco para el menú */
+  }
+  nav ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  nav ul li a {
+    font-size: 18px;
+    text-align: center;
+    display: block;
+  }
+
+  /* Texto y Titulos para vista movil */
+  main {
+    position: relative;
+  }
+
+  /* Intro más compacta */
+  .intro-section {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 90%;
+  }
+
+  .intro-section h2 {
+    font-size: 1.4rem; /* título más chico */
+    margin-bottom: 5px;
+  }
+
+  .intro-section p {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  /* Features debajo de intro */
+  .features-section {
+    position: absolute;
+    top: calc(25% + 100px); /* menos altura porque el h2 es más chico */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .feature-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px;
+    border-radius: 10px;
+    width: 85%;
+    color: white;
+    text-align: center;
+  }
+  
+  /* SOBRE NOSOTROS: ajustar tamaño de imagen de About Us para vista móvil */
+  .aboutUsImageSize {
+    width: 100%;        /* ocupa todo el ancho posible */
+    max-width: 400px;   /* aumenta el tamaño máximo */
+    height: auto;       /* mantiene proporción */
+    display: block;
+    margin: 0 auto;     /* centra la imagen */
+  }
+  
+  /* TIENDA: cambiar a grid de 2 columnas para móviles */
+  .productImageGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  /* Los slots ahora ocupan 100% (se ignoran las anchuras desktop) */
+  .productShopImage1,
+  .productShopImage2,
+  .productShopImage3,
+  .productShopImage4,
+  .productShopImage5,
+  .productShopImage6 {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+    padding: 6px;
+    justify-content: center;
+  }
+
+  .productImageGroup img {
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  /* ProductSelection: apilar y centrar todo */
+  .productSelection {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+    text-align: center;
+  }
+  .productSelection img,
+  .productSelection p,
+  .productSelection h3,
+  .productSelection h4 {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Finalizar Compra: selector de cantidad en columna */
+  .cantidad-control {
+    flex-direction: row; /* por defecto row; para ocupar ancho lo convertimos abajo */
+  }
+  /* Pero si quieres que en móvil estén en columna: */
+  .cantidad-control {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .cantidad-control input[type="number"] {
+    width: 100px;
+  }
+
+  /* Buttons en columna */
+  .buttonTextPosition {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  /* Footer apilado */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  footer .footerSocialMedia {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  /* Inputs/textarea en móvil: ocupan ancho */
+  input, textarea, select {
+    width: 100%;
+  }
+}
