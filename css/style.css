@@ -392,23 +392,42 @@ input:focus, textarea:focus, select:focus {
     display: block;
   }
 
-  /* Texto y Titulos para vista movil */
+  /* Evitar scroll horizontal en móvil */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Imagen de fondo recortada automáticamente */
+  .index-BgImage {
+    width: 100%;
+    height: 100vh; /* Alto igual a la pantalla */
+    object-fit: cover; /* Recorta sin deformar */
+    display: block;
+  }
+
+  /* Contenedor principal sin desbordes */
   main {
     position: relative;
+    overflow: hidden;
+  }
+
+  /* Asegurar que se adapten al ancho de pantalla */
+  .intro-section,
+  .features-section {
+    max-width: 100%;
   }
 
   /* Intro más compacta */
   .intro-section {
     position: absolute;
-    top: 25%;
+    top: 23%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     background: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 90%;
+    padding: 0px;
+    border-radius: 15px;
   }
 
   .intro-section h2 {
@@ -437,7 +456,7 @@ input:focus, textarea:focus, select:focus {
 
   .feature-card {
     background: rgba(0, 0, 0, 0.6);
-    padding: 8px;
+    padding: 2px;
     border-radius: 10px;
     width: 85%;
     color: white;
