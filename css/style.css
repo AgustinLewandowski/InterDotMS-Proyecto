@@ -111,44 +111,56 @@ h3 {
    INDEX - Main Desktop
    --------------------------- */
 
-/* Desktop */
+/* Contenedor de fondo */
+.index-BgImage {
+  background-image: url("../assets/images/imagenServidoresIDMS.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative; /* Permite posicionar elementos internos */
+  overflow: hidden;
+}
+
+/* Intro Section */
 .intro-section {
   position: absolute;
-  top: 50%;                  /* verticalmente al centro */
-  left: 50%;                 /* horizontalmente al centro */
+  top: 25%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  background: rgba(0, 0, 0, 0.5);
   color: white;
-  background: rgba(0, 0, 0, 0.5); /* opcional, mejora la legibilidad */
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   max-width: 600px;
 }
 
 .intro-section h2 {
   font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .intro-section p {
   font-size: 1.2rem;
 }
 
-/* Features debajo de la intro */
+/* Features Section */
 .features-section {
   position: absolute;
-  top: 68%; /* Mantener debajo de la intro */
+  top: 40%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  flex-wrap: wrap; /* permite que salten de línea si no hay espacio */
-  justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
   max-width: 90%;
 }
 
 .feature-card {
   background: rgba(0, 0, 0, 0.6);
-  padding: 15px;
+  padding: 5px;
   border-radius: 10px;
   width: 220px;
   color: white;
@@ -397,70 +409,36 @@ input:focus, textarea:focus, select:focus {
     overflow-x: hidden;
   }
 
-  /* Imagen de fondo recortada automáticamente */
   .index-BgImage {
-    width: 100%;
-    height: 100vh; /* Alto igual a la pantalla */
-    background-image: cover; /* Recorta sin deformar */
-    display: block;
+    background-attachment: scroll; /* Evita errores en móviles */
+    height: 100vh;
   }
 
-  /* Contenedor principal sin desbordes */
-  main {
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Asegurar que se adapten al ancho de pantalla */
-  .intro-section,
-  .features-section {
+  .intro-section {
+    top: 18%;
+    padding: 0px;
     max-width: 100%;
   }
 
-  /* Intro más compacta */
-  .intro-section {
-    position: absolute;
-    top: 23%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 0px;
-    border-radius: 15px;
-  }
-
   .intro-section h2 {
-    font-size: 1.4rem; /* título más chico */
-    margin-bottom: 5px;
+    font-size: 1.4rem;
   }
 
   .intro-section p {
-    font-size: 0.95rem;
-    line-height: 1.3;
+    font-size: 1rem;
   }
 
-  /* Features debajo de intro */
   .features-section {
-    position: absolute;
-    top: calc(25% + 100px); /* menos altura porque el h2 es más chico */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
+    top: 35%; /* Ajuste para que vaya debajo de la intro */
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 12px;
     width: 100%;
-    padding: 0 10px;
+    padding: 0px;
+    align-items: center;
   }
 
   .feature-card {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 2px;
-    border-radius: 10px;
     width: 85%;
-    color: white;
-    text-align: center;
   }
   
   /* SOBRE NOSOTROS: ajustar tamaño de imagen de About Us para vista móvil */
