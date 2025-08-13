@@ -401,7 +401,7 @@ input:focus, textarea:focus, select:focus {
   .index-BgImage {
     width: 100%;
     height: 100vh; /* Alto igual a la pantalla */
-    object-fit: cover; /* Recorta sin deformar */
+    background-image: cover; /* Recorta sin deformar */
     display: block;
   }
 
