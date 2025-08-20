@@ -231,16 +231,59 @@ h3 {
   height: auto;
   margin: 10px 0;
 }
-.shopGreenButton1, .shopGreenButton2 {
-  width: 120px;
+/* === Botones Generales === */
+.greenButton,
+.shopGreenButton {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  font-size: 18px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
   display: inline-block;
-  margin: 10px 0;
+  text-align: center;
 }
 
-.greenButton {
-  width: 120px;  
-  display: block;
-  margin: 0 auto; /* centra el botón en su contenedor */
+/* Contenedor de cada plan */
+.plan-card {
+  text-align: center; /* Esto centra los botones y textos */
+  margin: 20px auto;
+  padding: 15px;
+}
+
+/* Alternativa con flexbox (más control) */
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra todo horizontalmente */
+  justify-content: center;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+/* Hover */
+.greenButton:hover,
+.shopGreenButton:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Focus */
+.greenButton:focus,
+.shopGreenButton:focus {
+  outline: 2px solid #145214;
+  outline-offset: 2px;
+}
+
+/* Active */
+.greenButton:active,
+.shopGreenButton:active {
+  background-color: #1e7e34;
+  transform: scale(0.98);
 }
 
 /* Control de texto para tiendas */
@@ -534,4 +577,20 @@ input:focus, textarea:focus, select:focus {
   input, textarea, select {
     width: 100%;
   }
+  
+  /* Botones interactivos para vista móvil */
+  .shopGreenButton {
+    width: 100%;              /* Ocupa todo el ancho */
+    padding: 14px;            /* Más cómodo para tocar con el dedo */
+    font-size: 16px;          /* Texto un poco más chico */
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+  .greenButton {
+    width: 90%;        /* No ocupa el 100%, deja margen a los lados */
+    max-width: 300px;  /* Tamaño máximo */
+    margin: 10px auto; /* Lo centra */
+    display: block;
+  }
 }
+
