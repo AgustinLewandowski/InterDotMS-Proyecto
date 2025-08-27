@@ -233,6 +233,51 @@ h3 {
 }
 
 /* =====================================================
+   FINALIZAR COMPRA - BOTONES FALTANTES
+   ===================================================== */
+.finalizarCompraActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.finalizarCompraActions button {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.finalizarCompraActions .seguirComprando {
+  background-color: #6c757d;
+  color: #fff;
+}
+.finalizarCompraActions .seguirComprando:hover {
+  background-color: #5a6268;
+  transform: scale(1.05);
+}
+.finalizarCompraActions .seguirComprando:active {
+  background-color: #545b62;
+  transform: scale(0.98);
+}
+.finalizarCompraActions .finalizarCompra {
+  background-color: #28a745;
+  color: #fff;
+}
+.finalizarCompraActions .finalizarCompra:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+.finalizarCompraActions .finalizarCompra:active {
+  background-color: #1e7e34;
+  transform: scale(0.98);
+}
+
+/* =====================================================
    SOBRE NOSOTROS
    ===================================================== */
 .aboutUsImageSize {
@@ -288,15 +333,15 @@ header nav ul {
   padding-inline-start: 40px;
 }
 header nav ul li a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
-  font-size: 50px;
+  font-size: 22px;
   font-family: "Oswald", sans-serif;
   font-weight: 500;
   transition: color 0.18s ease, transform 0.18s ease;
 }
 header nav ul li a:hover, header nav ul li a:focus {
-  color: #0b63c6;
+  color: #28a745;
   transform: translateY(-1px);
 }
 
@@ -428,6 +473,14 @@ footer p {
     grid-template-columns: 1fr;
     gap: 8px;
     padding: 8px;
+  }
+  .finalizarCompraActions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .finalizarCompraActions button {
+    width: 100%;
+    font-size: 18px;
   }
 }
 

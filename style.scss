@@ -188,6 +188,57 @@ h3 { color: $color-black; font-size: 25px; font-weight: 300; }
 }
 
 /* =====================================================
+   FINALIZAR COMPRA - BOTONES FALTANTES
+   ===================================================== */
+.finalizarCompraActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+
+  button {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .seguirComprando {
+    background-color: #6c757d; // gris Bootstrap-like
+    color: #fff;
+
+    &:hover {
+      background-color: #5a6268;
+      transform: scale(1.05);
+    }
+    &:active {
+      background-color: #545b62;
+      transform: scale(0.98);
+    }
+  }
+
+  .finalizarCompra {
+    background-color: #28a745; // verde éxito
+    color: #fff;
+
+    &:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+    &:active {
+      background-color: #1e7e34;
+      transform: scale(0.98);
+    }
+  }
+}
+
+
+/* =====================================================
    SOBRE NOSOTROS
    ===================================================== */
 .aboutUsImageSize {
@@ -212,8 +263,14 @@ header {
   z-index: 20;
 
   .logo, .logo2 {
-    width: 60px; flex: 0 0 60px;
-    img { width: 100%; height: auto; display: block; }
+    width: 60px;
+    flex: 0 0 60px;
+
+    img { 
+      width: 100%; 
+      height: auto; 
+      display: block; 
+    }
   }
 
   nav {
@@ -227,15 +284,16 @@ header {
       padding-inline-start: 40px;
 
       li a {
-        color: $color-white;
+        color: #000;
         text-decoration: none;
-        font-size: 50px;
-        font-family: $font-heading;
+        font-size: 22px; 
+        font-family: "Oswald", sans-serif;
         font-weight: 500;
-        transition: color .18s ease, transform .18s ease;
+        transition: color 0.18s ease, transform 0.18s ease;
 
-        &:hover, &:focus {
-          color: #0b63c6;
+        &:hover,
+        &:focus {
+          color: #28a745;   // Verde claro en hover
           transform: translateY(-1px);
         }
       }
@@ -321,4 +379,15 @@ footer {
 
   footer { flex-direction: column; text-align: center; gap: 8px; }
   footer .footerSocialMedia { width: 100%; display: grid; grid-template-columns: 1fr; gap: 8px; padding: 8px; }
+
+  .finalizarCompraActions {
+    flex-direction: column;
+    gap: 12px;
+
+    button {
+      width: 100%;
+      font-size: 18px;
+    }
+
+  }
 }
