@@ -1,128 +1,110 @@
-
-/* ---------------------------
-   FONTS + RESET BÁSICO
-   --------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
+/* =====================================================
+   VARIABLES GLOBALES
+   ===================================================== */
+/* =====================================================
+   MIXINS
+   ===================================================== */
+/* =====================================================
+   RESET + BODY
+   ===================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Body base */
 body {
   font-family: "Ubuntu", sans-serif;
   color: #000;
   background-color: #fff;
   line-height: 1.4;
-  overflow-x: hidden; /* evita scroll horizontal causados por elementos flojos */
+  overflow-x: hidden;
 }
 
-/* ---------------------------
-   HEADER / NAV (Desktop)
-   --------------------------- */
-
+/* =====================================================
+   HEADER
+   ===================================================== */
 header {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
   justify-content: space-between;
   padding: 10px;
-  background-color: rgb(20, 77, 176); /* azul de fondo del header */
+  background-color: rgb(20, 77, 176);
   position: sticky;
   top: 0;
   z-index: 20;
 }
-
-/* Logotipos */
-.logo, .logo2 {
+header .logo, header .logo2 {
   width: 60px;
   flex: 0 0 60px;
 }
-.logo img, .logo2 img {
+header .logo img, header .logo2 img {
   width: 100%;
   height: auto;
   display: block;
 }
-
-/* Nav ocupa el espacio central con fondo blanco (rectángulo) */
-nav {
+header nav {
   flex: 1 1 auto;
-  width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  background: #ffffff;      /* fondo blanco del rectángulo del menú */
+  align-items: center;
+  gap: 0;
+  background: #fff;
 }
-
-/* UL centrado dentro del nav */
-nav ul {
+header nav ul {
   list-style: none;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: center;  /* CENTRA el UL en desktop */
-  gap: 40px;                /* separación entre items (mantiene separación) */
+  gap: 40px;
   padding-inline-start: 40px;
 }
-
-/* Estilos de links del nav */
-nav ul li a {
-  color: black;
+header nav ul li a {
+  color: #000;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 30px;
   font-family: "Oswald", sans-serif;
   font-weight: 500;
-  transition: color .18s ease, transform .18s ease;
+  transition: color 0.18s ease, transform 0.18s ease;
 }
-nav ul li a:hover,
-nav ul li a:focus {
+header nav ul li a:hover, header nav ul li a:focus {
   color: #0b63c6;
   transform: translateY(-1px);
 }
 
-.navbar .navbar-nav .nav-link{
-  color: #000;
-  font-family: "Oswald", sans-serif;
-  font-weight: 500;
-  font-size: 24px; /* aumentado */
-}
-/* Si usás el toggle de Bootstrap (navbar-toggler) el botón puede tener imagen */
-
-/* ---------------------------
-   TITULOS / H1
-   --------------------------- */
+/* =====================================================
+   TITULOS
+   ===================================================== */
 h1 {
-  color: #ffffff !important;
-  background-color: rgb(0,94,177);
+  color: #fff !important;
+  background-color: rgb(0, 94, 177);
   font-size: 50px;
   font-weight: 300;
   text-align: center;
-  padding: 0px 0;
   font-family: "Ubuntu", sans-serif;
 }
 
-/* Subtítulos */
 h3 {
-  color: rgb(0,0,0);
+  color: #000;
   font-size: 25px;
   font-weight: 300;
 }
 
-/* ---------------------------
-   INDEX - Main Desktop
-   --------------------------- */
-
-/* Contenedor de fondo */
+/* =====================================================
+   INDEX
+   ===================================================== */
 .index-BgImage {
-  background-image: url("../assets/images/imagenServidoresIDMS.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("../assets/images/imagenServidoresIDMS.png") center/cover no-repeat;
   height: 100vh;
-  position: relative; /* Permite posicionar elementos internos */
+  position: relative;
   overflow: hidden;
 }
 
-/* Intro Section */
 .intro-section {
   position: absolute;
   top: 25%;
@@ -130,110 +112,94 @@ h3 {
   transform: translate(-50%, -50%);
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: #fff;
   padding: 15px;
   border-radius: 10px;
   max-width: 600px;
 }
-
 .intro-section h2 {
   font-size: 2rem;
   margin-bottom: 10px;
 }
-
 .intro-section p {
   font-size: 1.2rem;
 }
 
-/* Features Section */
 .features-section {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
   max-width: 90%;
 }
-
-.feature-card {
+.features-section .feature-card {
   background: rgba(0, 0, 0, 0.6);
   padding: 5px;
   border-radius: 10px;
   width: 220px;
-  color: white;
+  color: #fff;
   text-align: center;
 }
 
-/* ---------------------------
-   TIENDA - Desktop layout (flex)
-   --------------------------- */
-
-/* Contenedor del grupo de imágenes: flex y wrap */
+/* =====================================================
+   TIENDA
+   ===================================================== */
 .productImageGroup {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  align-items: flex-start;
-}
-
-/* "Slots" para posicionar imágenes como en tu CSS original.
-   Ajustan ancho relativo de cada slot en desktop. */
-.productShopImage1,
-.productShopImage2,
-.productShopImage3,
-.productShopImage4,
-.productShopImage5,
-.productShopImage6 {
-  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.productImageGroup div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
   padding: 10px;
-  /* por defecto cada slot toma % relativo para mantener el wireframe */
 }
 
-/* Anchuras tal como en la versión anterior adaptadas para flex */
-.productShopImage1,
-.productShopImage2,
-.productShopImage6 {
-  flex: 0 0 20%; /* ~20% del ancho del contenedor */
+.productShopImage1, .productShopImage2, .productShopImage6 {
+  flex: 0 0 20%;
   max-width: 20%;
 }
 
 .productShopImage3 {
-  flex: 0 0 35%;
+  flex: 0 0 18%;
   max-width: 18%;
 }
 
-.productShopImage4,
-.productShopImage5 {
+.productShopImage4, .productShopImage5 {
   flex: 0 0 15%;
   max-width: 15%;
 }
 
-/* Si alguna imagen es más grande, el img dentro se adapta:
-   productImageGroup img ya asegura max-width / height:auto. */
-
-/* Textos y botones de la sección tienda */
 .productSelection {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 10px;
   text-align: center;
   margin-top: 20px;
 }
+
 .shopRouterIcon, .shopAntennaIcon {
   width: 100px;
   height: auto;
   margin: 10px 0;
 }
-/* === Botones Generales === */
-.greenButton,
-.shopGreenButton {
+
+.greenButton, .shopGreenButton {
   background-color: #28a745;
   color: #fff;
   border: none;
@@ -247,165 +213,64 @@ h3 {
   display: inline-block;
   text-align: center;
 }
-
-/* Contenedor de cada plan */
-.plan-card {
-  text-align: center; /* Esto centra los botones y textos */
-  margin: 20px auto;
-  padding: 15px;
-}
-
-/* Alternativa con flexbox (más control) */
-.plan-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra todo horizontalmente */
-  justify-content: center;
-  margin: 20px auto;
-  padding: 15px;
-}
-
-/* Hover */
-.greenButton:hover,
-.shopGreenButton:hover {
+.greenButton:hover, .shopGreenButton:hover {
   background-color: #218838;
   transform: scale(1.05);
 }
-
-/* Focus */
-.greenButton:focus,
-.shopGreenButton:focus {
+.greenButton:active, .shopGreenButton:active {
+  background-color: #1e7e34;
+  transform: scale(0.98);
+}
+.greenButton:focus, .shopGreenButton:focus {
   outline: 2px solid #145214;
   outline-offset: 2px;
 }
 
-/* Active */
-.greenButton:active,
-.shopGreenButton:active {
-  background-color: #1e7e34;
-  transform: scale(0.98);
+/* =====================================================
+   PLANES
+   ===================================================== */
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px auto;
+  padding: 15px;
 }
 
-/* Control de texto para tiendas */
-.productShopTextFont1,
-.productShopTextFont2,
-.productShopTextFont3 {
-  font-family: "Ubuntu", sans-serif;
-}
-
-/* ---------------------------
-   SOBRE NOSOTROS / PLANES / OTROS (Desktop)
-   --------------------------- */
-
-.aboutUsImageSize {
-  margin: 5px auto;
-  padding: 10px;
-  width: 20%;
+/* =====================================================
+   FINALIZAR COMPRA
+   ===================================================== */
+.productImagePosition img {
+  max-width: 250px;
+  height: auto;
+  margin: 0 auto;
   display: block;
-  text-align: center;
-}
-.aboutUsTextFont,
-.aboutUsTeamTextFontLink {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  padding: 10px;
-  text-align: left;
-}
-.aboutUsTeamTextFontLink { color: rgb(146,0,159); }
-
-/* Planes (botones e imágenes) */
-.h3PlansTextFont { font-weight: 300; text-align: center; }
-.descriptionText { max-width: 600px; margin: 10px auto; text-align:center; }
-/* ---------------------------
-   FINALIZAR COMPRA (Desktop)
-   --------------------------- */
-
-.productImagePosition img { max-width: 250px; height: auto; display:block; margin:0 auto; }
-
-.productTextFont, .productTextFont2, .productDescriptionFont {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  padding: 10px;
 }
 
-/* Botones de la parte finalizar */
-.buttonTextPosition {
-  margin: 5px auto;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  align-items: center;
-}
-
-/* estilo botones acción */
-.buttonTextFont1, .buttonTextFont2 {
-  font-family: "Oswald", sans-serif;
-  padding: 8px 12px;
-  cursor: pointer;
-}
-.buttonTextFont1 { color: rgb(35,70,0); background-color: rgba(0,177,0,0.404); }
-.buttonTextFont2 { color: rgb(0,55,118); background-color: rgba(59,160,207,0.432); }
-
-/* ---------------------------
-   FOOTER (Desktop)
-   --------------------------- */
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: rgb(20,67,176);
-}
-footer .footerSocialMedia {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  align-items: center;
-  color: #fff;
-  font-family: "Special Gothic Expanded One", sans-serif;
-  font-weight: 700;
-}
-footer p { font-weight: 700; }
-
-/* ---------------------------
-   INTERACTIVOS: botones, inputs, hover
-   --------------------------- */
-a, button, input[type="button"], input[type="submit"] {
-  transition: all .18s ease;
-}
-a:hover, button:hover { transform: translateY(-1px); }
-
-/* Inputs y textareas */
-input, textarea, select {
-  border-radius: 4px;
-  font-family: "Ubuntu", sans-serif;
-}
-input:focus, textarea:focus, select:focus {
-  outline: none;
-  box-shadow: 0 0 8px rgba(20,77,176,0.18);
-  border-color: rgba(20,77,176,0.6);
-}
-
-/* Selector de cantidad (finalizarCompra) - desktop layout */
 .cantidad-control {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   gap: 8px;
 }
 .cantidad-control button {
   width: 36px;
   height: 36px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background: rgb(20, 77, 176);
   border: none;
-  background: #144db0;
   color: #fff;
-  cursor: pointer;
   border-radius: 4px;
+  cursor: pointer;
 }
-.cantidad-control input[type="number"] {
+.cantidad-control input[type=number] {
   width: 80px;
   text-align: center;
   padding: 6px;
@@ -413,27 +278,59 @@ input:focus, textarea:focus, select:focus {
   border-radius: 4px;
 }
 
-/* ---------------------------
-   FIN BLOQUE DESKTOP (DEFAULT)
-   --------------------------- */
+/* =====================================================
+   SOBRE NOSOTROS
+   ===================================================== */
+.aboutUsImageSize {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+}
 
-/* =========================================================
-   BLOQUE MÓVIL — TODO LO QUE SIGA SE APLICA EN <= 768px
-   ========================================================= */
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(20, 77, 176);
+}
+footer img {
+  width: 80px;
+  height: auto;
+  display: block;
+}
+footer .footerSocialMedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 50%;
+  color: #fff;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 700;
+}
+footer p {
+  font-weight: 700;
+}
+
+/* =====================================================
+   RESPONSIVE (MOBILE)
+   ===================================================== */
 @media (max-width: 768px) {
-
-  /* HEADER: apila elementos */
   header {
     flex-direction: column;
-    align-items: center;
     gap: 6px;
     padding: 8px;
-  }
-
-  /* NAV full-width y UL en vertical (grid) */
-  nav {
-    width: 100%;
-    background: #ffffff; /* el rectángulo blanco para el menú */
   }
   nav ul {
     display: grid;
@@ -444,122 +341,56 @@ input:focus, textarea:focus, select:focus {
   nav ul li a {
     font-size: 18px;
     text-align: center;
-    display: block;
   }
-
-  /* Evitar scroll horizontal en móvil */
-  html, body {
-    overflow-x: hidden;
-  }
-
-  .index-BgImage {
-    background-attachment: scroll; /* Evita errores en móviles */
-    height: 100vh;
-  }
-
   .intro-section {
     top: 18%;
-    padding: 0px;
+    padding: 0;
     max-width: 100%;
   }
-
   .intro-section h2 {
     font-size: 1.4rem;
   }
-
   .intro-section p {
     font-size: 1rem;
   }
-
   .features-section {
-    top: 35%; /* Ajuste para que vaya debajo de la intro */
+    top: 35%;
     flex-direction: column;
     gap: 12px;
     width: 100%;
-    padding: 0px;
-    align-items: center;
   }
-
   .feature-card {
     width: 85%;
   }
-  
-  /* SOBRE NOSOTROS: ajustar tamaño de imagen de About Us para vista móvil */
   .aboutUsImageSize {
-    width: 100%;        /* ocupa todo el ancho posible */
-    max-width: 400px;   /* aumenta el tamaño máximo */
-    height: auto;       /* mantiene proporción */
-    display: block;
-    margin: 0 auto;     /* centra la imagen */
+    max-width: 90%;
+    margin: 10px auto;
   }
-  
-  /* TIENDA: cambiar a grid de 2 columnas para móviles */
   .productImageGroup {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
     padding: 12px;
   }
-
-  /* Los slots ahora ocupan 100% (se ignoran las anchuras desktop) */
-  .productShopImage1,
-  .productShopImage2,
-  .productShopImage3,
-  .productShopImage4,
-  .productShopImage5,
-  .productShopImage6 {
+  .productShopImage1, .productShopImage2, .productShopImage3,
+  .productShopImage4, .productShopImage5, .productShopImage6 {
     flex: none;
-    max-width: 100%;
     width: 100%;
     padding: 6px;
     justify-content: center;
   }
-
   .productImageGroup img {
     max-width: 180px;
     margin: 0 auto;
   }
-
-  /* ProductSelection: apilar y centrar todo */
   .productSelection {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 12px;
     padding: 12px;
-    text-align: center;
   }
-  .productSelection img,
-  .productSelection p,
-  .productSelection h3,
-  .productSelection h4 {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  /* Finalizar Compra: selector de cantidad en columna */
-  .cantidad-control {
-    flex-direction: row; /* por defecto row; para ocupar ancho lo convertimos abajo */
-  }
-  /* Pero si quieres que en móvil estén en columna: */
   .cantidad-control {
     justify-content: center;
-    gap: 8px;
   }
-
-  .cantidad-control input[type="number"] {
-    width: 100px;
-  }
-
-  /* Buttons en columna */
-  .buttonTextPosition {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    padding: 0 12px;
-  }
-
-  /* Footer apilado */
   footer {
     flex-direction: column;
     text-align: center;
@@ -572,25 +403,6 @@ input:focus, textarea:focus, select:focus {
     gap: 8px;
     padding: 8px;
   }
-
-  /* Inputs/textarea en móvil: ocupan ancho */
-  input, textarea, select {
-    width: 100%;
-  }
-  
-  /* Botones interactivos para vista móvil */
-  .shopGreenButton {
-    width: 100%;              /* Ocupa todo el ancho */
-    padding: 14px;            /* Más cómodo para tocar con el dedo */
-    font-size: 16px;          /* Texto un poco más chico */
-    border-radius: 6px;
-    margin-top: 10px;
-  }
-  .greenButton {
-    width: 90%;        /* No ocupa el 100%, deja margen a los lados */
-    max-width: 300px;  /* Tamaño máximo */
-    margin: 10px auto; /* Lo centra */
-    display: block;
-  }
 }
 
+/*# sourceMappingURL=style.css.map */
