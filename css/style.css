@@ -1,4 +1,14 @@
 /* =====================================================
+   FUENTES
+   ===================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Oswald:wght@300;400;500;600;700&display=swap");
+@font-face {
+  font-family: "Special Gothic Expanded One";
+  src: url("../assets/fonts/SpecialGothicExpandedOne.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* =====================================================
    VARIABLES GLOBALES
    ===================================================== */
 /* =====================================================
@@ -19,62 +29,6 @@ body {
   background-color: #fff;
   line-height: 1.4;
   overflow-x: hidden;
-}
-
-/* =====================================================
-   HEADER
-   ===================================================== */
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: rgb(20, 77, 176);
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-header .logo, header .logo2 {
-  width: 60px;
-  flex: 0 0 60px;
-}
-header .logo img, header .logo2 img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-header nav {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  background: #fff;
-}
-header nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  padding-inline-start: 40px;
-}
-header nav ul li a {
-  color: #000;
-  text-decoration: none;
-  font-size: 30px;
-  font-family: "Oswald", sans-serif;
-  font-weight: 500;
-  transition: color 0.18s ease, transform 0.18s ease;
-}
-header nav ul li a:hover, header nav ul li a:focus {
-  color: #0b63c6;
-  transform: translateY(-1px);
 }
 
 /* =====================================================
@@ -112,7 +66,7 @@ h3 {
   transform: translate(-50%, -50%);
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: white;
   padding: 15px;
   border-radius: 10px;
   max-width: 600px;
@@ -291,6 +245,62 @@ h3 {
 }
 
 /* =====================================================
+   HEADER
+   ===================================================== */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(20, 77, 176);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+header .logo, header .logo2 {
+  width: 60px;
+  flex: 0 0 60px;
+}
+header .logo img, header .logo2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+header nav {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background: #fff;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-inline-start: 40px;
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 50px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+header nav ul li a:hover, header nav ul li a:focus {
+  color: #0b63c6;
+  transform: translateY(-1px);
+}
+
+/* =====================================================
    FOOTER
    ===================================================== */
 footer {
@@ -304,7 +314,7 @@ footer {
   background-color: rgb(20, 77, 176);
 }
 footer img {
-  width: 80px;
+  width: 70px;
   height: auto;
   display: block;
 }
@@ -339,12 +349,13 @@ footer p {
     padding: 8px 12px;
   }
   nav ul li a {
-    font-size: 18px;
+    font-size: 28px;
     text-align: center;
   }
   .intro-section {
-    top: 18%;
+    top: 10%;
     padding: 0;
+    width: 320px;
     max-width: 100%;
   }
   .intro-section h2 {
@@ -354,13 +365,13 @@ footer p {
     font-size: 1rem;
   }
   .features-section {
-    top: 35%;
+    top: 22%;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     width: 100%;
   }
   .feature-card {
-    width: 85%;
+    width: 100%;
   }
   .aboutUsImageSize {
     max-width: 90%;
@@ -379,14 +390,29 @@ footer p {
     padding: 6px;
     justify-content: center;
   }
+  .productImageGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+    justify-items: center;
+  }
   .productImageGroup img {
     max-width: 180px;
     margin: 0 auto;
+    display: block;
+  }
+  .shopRouterIcon,
+  .shopAntennaIcon {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
   }
   .productSelection {
     display: grid;
     gap: 12px;
     padding: 12px;
+    grid-column: auto;
   }
   .cantidad-control {
     justify-content: center;

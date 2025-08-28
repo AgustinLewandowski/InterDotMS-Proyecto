@@ -1,4 +1,16 @@
 /* =====================================================
+   FUENTES
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Oswald:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: "Special Gothic Expanded One";
+  src: url("../assets/fonts/SpecialGothicExpandedOne.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =====================================================
    VARIABLES GLOBALES
    ===================================================== */
 $font-main: "Ubuntu", sans-serif;
@@ -58,50 +70,6 @@ body {
 }
 
 /* =====================================================
-   HEADER
-   ===================================================== */
-header {
-  @include flex-center(row, 20px);
-  justify-content: space-between;
-  padding: 10px;
-  background-color: $color-primary;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-
-  .logo, .logo2 {
-    width: 60px; flex: 0 0 60px;
-    img { width: 100%; height: auto; display: block; }
-  }
-
-  nav {
-    flex: 1 1 auto;
-    @include flex-center(row);
-    background: $color-white;
-
-    ul {
-      list-style: none;
-      @include flex-center(row, 40px);
-      padding-inline-start: 40px;
-
-      li a {
-        color: $color-black;
-        text-decoration: none;
-        font-size: 30px;
-        font-family: $font-heading;
-        font-weight: 500;
-        transition: color .18s ease, transform .18s ease;
-
-        &:hover, &:focus {
-          color: #0b63c6;
-          transform: translateY(-1px);
-        }
-      }
-    }
-  }
-}
-
-/* =====================================================
    TITULOS
    ===================================================== */
 h1 {
@@ -129,7 +97,7 @@ h3 { color: $color-black; font-size: 25px; font-weight: 300; }
   transform: translate(-50%, -50%);
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-  color: $color-white;
+  color: white;
   padding: 15px;
   border-radius: 10px;
   max-width: 600px;
@@ -232,29 +200,74 @@ h3 { color: $color-black; font-size: 25px; font-weight: 300; }
 }
 
 /* =====================================================
-   FOOTER
+   HEADER
    ===================================================== */
-footer {
-  @include flex-center(row, 10px);
+header {
+  @include flex-center(row, 20px);
   justify-content: space-between;
   padding: 10px;
   background-color: $color-primary;
+  position: sticky;
+  top: 0;
+  z-index: 20;
 
-  img {
-    width: 80px;   // tamaño controlado
-    height: auto;
-    display: block;
+  .logo, .logo2 {
+    width: 60px; flex: 0 0 60px;
+    img { width: 100%; height: auto; display: block; }
+  }
+
+  nav {
+    flex: 1 1 auto;
+    @include flex-center(row);
+    background: $color-white;
+
+    ul {
+      list-style: none;
+      @include flex-center(row, 40px);
+      padding-inline-start: 40px;
+
+      li a {
+        color: $color-white;
+        text-decoration: none;
+        font-size: 50px;
+        font-family: $font-heading;
+        font-weight: 500;
+        transition: color .18s ease, transform .18s ease;
+
+        &:hover, &:focus {
+          color: #0b63c6;
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+  @include flex-center(row,10px);
+  justify-content: space-between;
+  padding: 10px;
+  background-color: $color-primary;
+  
+  img{ 
+   width: 70px;
+   height: auto;
+   display: block;
   }
 
   .footerSocialMedia {
-    @include flex-center(row, 12px);
-    width: 50%;
-    color: $color-white;
-    font-family: $font-footer;
-    font-weight: 700;
+   @include flex-center(row,12px);
+   width: 50%;
+   color: $color-white;
+   font-family: $font-footer;
+   font-weight: 700;
   }
-
-  p { font-weight: 700; }
+  
+  p{font-weight: 700;}
 }
 
 /* =====================================================
@@ -264,13 +277,13 @@ footer {
   header { flex-direction: column; gap: 6px; padding: 8px; }
 
   nav ul { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 8px 12px; }
-  nav ul li a { font-size: 18px; text-align: center; }
+  nav ul li a { font-size: 28px; text-align: center; }
 
-  .intro-section { top: 18%; padding: 0; max-width: 100%; h2 { font-size: 1.4rem; } p { font-size: 1rem; } }
+  .intro-section { top: 10%; padding: 0;width: 320px ;max-width: 100%; h2 { font-size: 1.4rem; } p { font-size: 1rem; } }
 
-  .features-section { top: 35%; flex-direction: column; gap: 12px; width: 100%; }
+  .features-section { top: 22%; flex-direction: column; gap: 16px; width: 100%; }
 
-  .feature-card { width: 85%; }
+  .feature-card { width: 100%; }
 
   .aboutUsImageSize { max-width: 90%; margin: 10px auto; }
 
@@ -281,9 +294,28 @@ footer {
     flex: none; width: 100%; padding: 6px; justify-content: center;
   }
 
-  .productImageGroup img { max-width: 180px; margin: 0 auto; }
+  .productImageGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+    justify-items: center;   // 🔹 Esto centra TODOS los elementos del grid
+  }
 
-  .productSelection { display: grid; gap: 12px; padding: 12px; }
+  .productImageGroup img {
+    max-width: 180px;
+    margin: 0 auto;          // 🔹 Refuerzo del centrado
+    display: block;
+  }
+
+  .shopRouterIcon,
+  .shopAntennaIcon {
+    display: block;
+    margin: 0 auto;          // 🔹 Fuerza a estar al centro
+    text-align: center;
+  }
+
+  .productSelection { display: grid; gap: 12px; padding: 12px; grid-column: auto}
 
   .cantidad-control { justify-content: center; }
 
