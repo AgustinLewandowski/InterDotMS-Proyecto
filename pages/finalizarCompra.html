@@ -35,56 +35,72 @@
 
      </header>
      <main>
-         <h1 class="titleColor">Finalizar Compra</h1>
-         <section class="productImagePosition">
-           <img src="../assets/images/routerTp-LinkXX230v.jfif" alt="routerTpLink">
-           </section>
-           <section>
-           <h3 class="productTextFont">RouterTp-LinkXX230v</h3>
-           <p class="productDescriptionFont">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-           <h3 class="productTextFont">MEDIO DE PAGO</h3>
-           <h3 class="productTextFont">ENVIO A DOMICILIO RETIRA</h3>
-           <h3 class="productTextFont">COMENTARIOS</h3>
-           </section>
-            <div class="container my-4">
-              <h3>Dejar un comentario</h3>
-              <textarea class="form-control mb-2" rows="4" placeholder="Escribe tu comentario..."></textarea>
-              <button class="btn btn-success">Enviar</button>
-            </div>
-           <section>
-           <h3 class="productTextFont2">CANTIDAD</h3>
-           </section>
-            <div class="container my-4">
-                <h3>Seleccionar cantidad</h3>
-              <div class="d-flex flex-wrap align-items-center gap-2">
-                <button class="btn btn-primary" id="btn-minus">-</button>
-                <input type="number" id="cantidad" value="1" min="1" class="form-control" style="width:80px;text-align:center;">
-                <button class="btn btn-primary" id="btn-plus">+</button>
-              </div>
-            </div>
-           <section>
-           <h3 class="productTextFont2">PRECIO</h3>
-           <h3 class="productTextFont2">SUBTOTAL</h3>
-           <h3 class="productTextFont2">DESCUENTO</h3>
-           <h3 class="productTextFont2">COSTO ENVIO PARA CP</h3>
-           <h3 class="productTextFont2">TOTAL</h3>
-          </section>
-          <section class="finalizarCompraActions">
-           <h2 class="seguirComprando">SEGUIR COMPRANDO</h2>
-           <h2 class="finalizarCompra">TERMINAR LA COMPRA</h2>
-          </section>
+      <h1>Finalizar Compra</h1>
+  <section class="finalizar-compra">
+    <!-- Lado Izquierdo: Producto -->
+    <div class="producto-info">
+      <h2 class="titulo-detalle">Detalle de la compra</h2>
+      <h2 class="subtitulo-producto">Router Tp-Link</h2>
+      <img src="../assets/images/routerTp-LinkXX230v.jfif" alt="Router XX">
+
+      <p class="descripcion">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+
+      <div class="metodos-pago">
+        <h3 class="titulo-metodos">Métodos de pago</h3>
+        <img src="../assets/images/paymentMethods.png" alt="Métodos de pago">
+      </div>
+
+
+      <div class="comentarios">
+        <label for="comentario">Deja un comentario:</label>
+        <textarea id="comentario" placeholder="Escribe tu opinión..."></textarea>
+        <button class="btn-enviar">Enviar</button>
+      </div>
+    </div>
+
+    <!-- Lado Derecho: Detalles de compra -->
+    <div class="detalle-compra">
+      <div class="cantidad">
+        <label>Cantidad</label>
+        <button class="btn-menos">-</button>
+        <span class="valor-cantidad">1</span>
+        <button class="btn-mas">+</button>
+      </div>
+      <p><b>PRECIO:</b> $XX.XXX</p>
+      <p><b>SUBTOTAL:</b> $XX.XXX</p>
+      <p><b>DESCUENTO:</b> $0</p>
+      <p><b>COSTO DE ENVÍO PARA CP:</b> $0</p>
+      <p><strong>Total: $XX.XXX</strong></p>
+    </div>
+  </section>
+
+  <!-- Botones de acción -->
+  <div class="finalizar-compra-actions">
+    <button class="btn-seguir">SEGUIR COMPRANDO</button>
+    <button class="btn-finalizar">TERMINAR LA COMPRA</button>
+  </div>
+</main>
 
 <script>
-document.getElementById('btn-plus').addEventListener('click', function() {
-  let cantidad = document.getElementById('cantidad');
-  cantidad.value = parseInt(cantidad.value) + 1;
-});
-document.getElementById('btn-minus').addEventListener('click', function() {
-  let cantidad = document.getElementById('cantidad');
-  if (parseInt(cantidad.value) > 1) {
-    cantidad.value = parseInt(cantidad.value) - 1;
-  }
-});
+  const btnMas = document.querySelector(".btn-mas");
+  const btnMenos = document.querySelector(".btn-menos");
+  const valorCantidad = document.querySelector(".valor-cantidad");
+
+  let cantidad = 1;
+
+  btnMas.addEventListener("click", () => {
+    cantidad++;
+    valorCantidad.textContent = cantidad;
+  });
+
+  btnMenos.addEventListener("click", () => {
+    if (cantidad > 1) {
+      cantidad--;
+      valorCantidad.textContent = cantidad;
+    }
+  });
 </script>
 
 </main>

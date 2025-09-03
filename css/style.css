@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* =====================================================
    FUENTES
    ===================================================== */
@@ -235,58 +236,230 @@ h3 {
 /* =====================================================
    FINALIZAR COMPRA - BOTONES FALTANTES
    ===================================================== */
-.finalizarCompraActions {
+/* ================= FINALIZAR COMPRA ================= */
+.finalizar-compra {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1100px;
+  padding: 20px;
+  /* ----- LADO IZQUIERDO: PRODUCTO ----- */
+  /* ----- LADO DERECHO: DETALLES COMPRA ----- */
+}
+.finalizar-compra .producto-info {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-top: 20px;
+  flex-direction: column;
+  gap: 20px;
+  /* ================= TÍTULOS DE DETALLE ================= */
 }
-.finalizarCompraActions button {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: bold;
+.finalizar-compra .producto-info .titulo-detalle {
+  font-size: 26px;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  color: rgb(20, 77, 176);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.finalizar-compra .producto-info .subtitulo-producto {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  margin-bottom: 15px;
+}
+.finalizar-compra .producto-info img {
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 10px;
+}
+.finalizar-compra .producto-info .descripcion {
   font-size: 16px;
-  padding: 12px 24px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  line-height: 1.5;
 }
-.finalizarCompraActions .seguirComprando {
-  background-color: #6c757d;
-  color: #fff;
+.finalizar-compra .producto-info .metodos-pago {
+  display: flex;
+  flex-direction: column; /* título encima de la imagen */
+  align-items: flex-start;
+  margin: 20px 0;
 }
-.finalizarCompraActions .seguirComprando:hover {
-  background-color: #5a6268;
-  transform: scale(1.05);
+.finalizar-compra .producto-info .metodos-pago .titulo-metodos {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 8px;
+  color: #000;
 }
-.finalizarCompraActions .seguirComprando:active {
-  background-color: #545b62;
-  transform: scale(0.98);
+.finalizar-compra .producto-info .metodos-pago img {
+  max-width: 250px;
+  height: auto;
+  display: block;
 }
-.finalizarCompraActions .finalizarCompra {
+.finalizar-compra .producto-info .comentarios {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.finalizar-compra .producto-info .comentarios textarea {
+  resize: none;
+  min-height: 80px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+}
+.finalizar-compra .producto-info .comentarios .btn-enviar {
+  align-self: flex-start;
   background-color: #28a745;
   color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: "Oswald", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
 }
-.finalizarCompraActions .finalizarCompra:hover {
-  background-color: #218838;
-  transform: scale(1.05);
+.finalizar-compra .producto-info .comentarios .btn-enviar:hover {
+  background-color: rgb(36, 150.3, 62.1);
 }
-.finalizarCompraActions .finalizarCompra:active {
-  background-color: #1e7e34;
-  transform: scale(0.98);
+.finalizar-compra .detalle-compra {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 10px;
+  column-gap: 15px;
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
+}
+.finalizar-compra .detalle-compra .cantidad {
+  grid-column: 1/span 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.finalizar-compra .detalle-compra .cantidad label {
+  font-weight: 600;
+}
+.finalizar-compra .detalle-compra .cantidad button {
+  background: rgb(20, 77, 176);
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.finalizar-compra .detalle-compra .cantidad button:hover {
+  background: rgb(18, 69.3, 158.4);
+}
+.finalizar-compra .detalle-compra .cantidad button:active {
+  transform: scale(0.9);
+}
+.finalizar-compra .detalle-compra .cantidad .valor-cantidad {
+  font-weight: 700;
+  font-size: 18px;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* ----- BOTONES DE ACCIÓN ----- */
+.finalizar-compra-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px auto;
+}
+.finalizar-compra-actions .btn-seguir {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 24px;
+  border: 2px solid #155724;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.finalizar-compra-actions .btn-seguir:hover {
+  background-color: #c3e6cb;
+}
+.finalizar-compra-actions .btn-finalizar {
+  background-color: #cce5ff;
+  color: #004085;
+  padding: 12px 24px;
+  border: 2px solid #004085;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.finalizar-compra-actions .btn-finalizar:hover {
+  background-color: #b8daff;
 }
 
 /* =====================================================
    SOBRE NOSOTROS
    ===================================================== */
-.aboutUsImageSize {
+.sobre-nosotros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background: #fff;
+}
+.sobre-nosotros .imagen-aboutus {
+  max-width: 500px;
   width: 100%;
-  max-width: 600px;
+  margin-bottom: 20px;
+}
+.sobre-nosotros .imagen-aboutus img {
+  width: 100%;
   height: auto;
+  border-radius: 6px;
   display: block;
-  margin: 20px auto;
-  border-radius: 10px;
+}
+.sobre-nosotros .titulo-principal {
+  display: block;
+  font-size: 26px;
+  line-height: 1.2;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  color: rgb(20, 77, 176);
+  margin: 10px 0 30px 0;
+  text-align: center;
+}
+.sobre-nosotros .bloques-info {
+  width: 100%;
+  max-width: 700px; /* más angosto para que no se estiren demasiado */
+  display: flex;
+  flex-direction: column; /* uno debajo de otro */
+  gap: 25px;
+}
+.sobre-nosotros .bloques-info .bloque {
+  text-align: left;
+}
+.sobre-nosotros .bloques-info .bloque h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+}
+.sobre-nosotros .bloques-info .bloque p {
+  font-size: 16px;
+  line-height: 1.3; /* menos altura, ocupa dos renglones */
+  color: #333;
+  max-width: 90%; /* limita el ancho para no generar tres líneas */
+}
+.sobre-nosotros .bloques-info .bloque a {
+  color: #e63946;
+  text-decoration: none;
+  font-weight: 600;
+}
+.sobre-nosotros .bloques-info .bloque a:hover {
+  text-decoration: underline;
 }
 
 /* =====================================================
@@ -418,10 +591,6 @@ footer p {
   .feature-card {
     width: 100%;
   }
-  .aboutUsImageSize {
-    max-width: 90%;
-    margin: 10px auto;
-  }
   .productImageGroup {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -474,13 +643,74 @@ footer p {
     gap: 8px;
     padding: 8px;
   }
-  .finalizarCompraActions {
-    flex-direction: column;
-    gap: 12px;
+  .finalizar-compra {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
   }
-  .finalizarCompraActions button {
-    width: 100%;
+  .finalizar-compra .titulo-detalle {
+    font-size: 22px;
+    text-align: center;
+  }
+  .finalizar-compra .subtitulo-producto {
     font-size: 18px;
+    text-align: center;
+  }
+  .finalizar-compra .producto-info img {
+    display: block;
+    margin: 0 auto;
+  }
+  .finalizar-compra .metodos-pago {
+    align-items: center; /* centrado en móvil */
+  }
+  .finalizar-compra .metodos-pago .titulo-metodos {
+    text-align: center;
+    font-size: 16px;
+  }
+  .finalizar-compra .metodos-pago img {
+    max-width: 180px;
+  }
+  .finalizar-compra .detalle-compra {
+    font-size: 14px;
+    column-gap: 10px;
+  }
+  .comentarios .btn-enviar {
+    width: 100%;
+    text-align: center;
+  }
+  .finalizar-compra-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .finalizar-compra-actions .btn-seguir,
+  .finalizar-compra-actions .btn-finalizar {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* ================== RESPONSIVE (About Us) ================== */
+@media (max-width: 768px) {
+  .sobre-nosotros {
+    padding: 20px;
+  }
+  .sobre-nosotros .titulo-principal {
+    font-size: 22px;
+  }
+  .sobre-nosotros .bloques-info {
+    max-width: 100%;
+    gap: 20px;
+  }
+  .sobre-nosotros .bloques-info .bloque {
+    text-align: center;
+  }
+  .sobre-nosotros .bloques-info .bloque h3 {
+    font-size: 17px;
+  }
+  .sobre-nosotros .bloques-info .bloque p {
+    font-size: 15px;
+    line-height: 1.4; /* un poco más legible en móvil */
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 
