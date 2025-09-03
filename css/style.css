@@ -54,7 +54,7 @@ h3 {
    INDEX
    ===================================================== */
 .index-BgImage {
-  background: url("../assets/images/imagenServidoresIDMS.png") center/cover no-repeat;
+  background: url("../assets/images/imagenServidoresIDMS.webp") center/cover no-repeat;
   height: 100vh;
   position: relative;
   overflow: hidden;
