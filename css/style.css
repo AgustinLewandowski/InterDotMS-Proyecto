@@ -431,34 +431,37 @@ h3 {
   margin: 10px 0 30px 0;
   text-align: center;
 }
-.sobre-nosotros .bloques-info {
-  width: 100%;
-  max-width: 700px; /* más angosto para que no se estiren demasiado */
-  display: flex;
-  flex-direction: column; /* uno debajo de otro */
-  gap: 25px;
+.sobre-nosotros .about-section {
+  padding: 20px 40px;
+  display: grid;
+  gap: 30px;
+  width: 800px; /* ancho fijo deseado */
+  max-width: 800px; /* asegura que no se ensanche */
+  min-width: 800px; /* asegura que no se achique */
 }
-.sobre-nosotros .bloques-info .bloque {
-  text-align: left;
+.sobre-nosotros .about-section .about-block {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 30px;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-.sobre-nosotros .bloques-info .bloque h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #000;
+.sobre-nosotros .about-section .about-block h2 {
+  font-size: 24px;
+  color: #28a745;
+  margin-bottom: 10px;
 }
-.sobre-nosotros .bloques-info .bloque p {
+.sobre-nosotros .about-section .about-block p {
   font-size: 16px;
-  line-height: 1.3; /* menos altura, ocupa dos renglones */
-  color: #333;
-  max-width: 90%; /* limita el ancho para no generar tres líneas */
+  line-height: 1.6;
+  color: #f1f1f1;
 }
-.sobre-nosotros .bloques-info .bloque a {
+.sobre-nosotros .about-section .about-block a {
   color: #e63946;
   text-decoration: none;
   font-weight: 600;
 }
-.sobre-nosotros .bloques-info .bloque a:hover {
+.sobre-nosotros .about-section .about-block a:hover {
   text-decoration: underline;
 }
 
@@ -522,33 +525,26 @@ header nav ul li a:hover, header nav ul li a:focus {
    FOOTER
    ===================================================== */
 footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  justify-content: space-between;
-  padding: 10px;
   background-color: rgb(20, 77, 176);
-}
-footer img {
-  width: 70px;
-  height: auto;
-  display: block;
-}
-footer .footerSocialMedia {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  width: 50%;
+  padding: 20px;
   color: #fff;
-  font-family: "Special Gothic Expanded One", sans-serif;
-  font-weight: 700;
 }
-footer p {
-  font-weight: 700;
+footer .footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: left;
+}
+footer .logo-footer img {
+  width: 80px;
+  height: auto;
+}
+footer .copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
 }
 
 /* =====================================================
@@ -631,17 +627,20 @@ footer p {
   .cantidad-control {
     justify-content: center;
   }
-  footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 8px;
+  /*------------------------------------------------------------------SIN USAR-------------------------------------
+   footer { flex-direction: column; text-align: center; gap: 8px; }
+    footer .footerSocialMedia { width: 100%; display: grid; grid-template-columns: 1fr; gap: 8px; padding: 8px; }    
+  ----------------------------------------------------------------------------------------------------------------*/
+  .logo-footer {
+    display: flex;
+    justify-content: center;
   }
-  footer .footerSocialMedia {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 8px;
+  .logo-footer img {
+    width: 60px;
+  }
+  .copyright {
+    font-size: 14px;
+    margin-top: 15px;
   }
   .finalizar-compra {
     grid-template-columns: 1fr;
@@ -696,21 +695,22 @@ footer p {
   .sobre-nosotros .titulo-principal {
     font-size: 22px;
   }
-  .sobre-nosotros .bloques-info {
-    max-width: 100%;
-    gap: 20px;
+  .sobre-nosotros .about-section {
+    padding: 40px 20px;
+    display: grid;
+    gap: 30px;
+    width: 300px; /* ancho fijo deseado */
+    max-width: 300px; /* asegura que no se ensanche */
+    min-width: 300px; /* asegura que no se achique */
   }
-  .sobre-nosotros .bloques-info .bloque {
-    text-align: center;
+  .sobre-nosotros .about-section .about-block {
+    padding: 15px;
   }
-  .sobre-nosotros .bloques-info .bloque h3 {
-    font-size: 17px;
+  .sobre-nosotros .about-section .about-block h2 {
+    font-size: 20px;
   }
-  .sobre-nosotros .bloques-info .bloque p {
-    font-size: 15px;
-    line-height: 1.4; /* un poco más legible en móvil */
-    max-width: 100%;
-    margin: 0 auto;
+  .sobre-nosotros .about-section .about-block p {
+    font-size: 14px;
   }
 }
 
